@@ -172,7 +172,12 @@ void updatescreen()
 int getticks()
 {
   if(!ui.opt_nonrealtime)
+#ifdef __APPLE__
+// http://lgo900.wordpress.com/2011/12/25/running-ibniz-on-mac-os-x/
+    return SDL_GetTicks()/3;
+#else
     return SDL_GetTicks();
+#endif
   else
   {
     return dumper.framecount*50/3;
