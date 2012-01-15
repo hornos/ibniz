@@ -18,7 +18,7 @@ vmtest: $(OBJ) vm_test.o
 	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -f *.o *~ ibniz vmtest
+	rm -f *.o *~ $(EXE) vmtest
 
 ui_sdl.o: ui_sdl.c ibniz.h font.i vm.h texts.i
 
